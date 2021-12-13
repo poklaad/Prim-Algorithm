@@ -12,7 +12,7 @@ int** data_generator(int &vert) {
 	for (int i = 0; i < vert; i++) {
 		graph[i] = new int[vert];
 		for (int j = i + 1; j < vert; j++) {
-			graph[i][j] = (rand()%3 == 0 ? 0 : rand()%90 + 10); //проверка на %3 - для создания более разреженного графа
+			graph[i][j] = (rand()%3 == 0 ? 0 : rand()%9000 + 1000); //проверка на %3 - для создания более разреженного графа
 		}
 		graph[i][i] = 0;
 		for (int j = i; j >= 0; j--) {
@@ -66,7 +66,7 @@ int main() {
 	int count = 0;
 
 	//генерация графа
-	vert = 1000 * (c + 1); //количество вершин в графе
+	vert = 1000; //количество вершин в графе
 	int** graph = data_generator(vert);
 
 
